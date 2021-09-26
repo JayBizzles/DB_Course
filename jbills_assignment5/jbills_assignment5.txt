@@ -1,0 +1,306 @@
+mysql> notee
+mysql> source d:\my_scripts\jbills_assignment5.sql
+--------------
+/*  Assignment5.sql 
+    Jamal Bills
+    CS 31A, Summer 2021 */
+
+USE retailStore
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/* Query 1 */
+SELECT AVG(salary) AS Average
+FROM employees
+WHERE manager_id = 100
+--------------
+
++--------------+
+| Average      |
++--------------+
+| 12660.000000 |
++--------------+
+1 row in set (0.00 sec)
+
+--------------
+/* Query 2 */
+
+SELECT 
+    MIN(salary),
+    MAX(hire_date),
+    MIN(last_name) AS first_last_name,
+    MAX(last_name) AS last_last_name
+FROM employees
+WHERE department_id BETWEEN 50 AND 60
+--------------
+
++-------------+----------------+-----------------+----------------+
+| MIN(salary) | MAX(hire_date) | first_last_name | last_last_name |
++-------------+----------------+-----------------+----------------+
+|     2500.00 | 2015-07-06     | Bell            | Vargas         |
++-------------+----------------+-----------------+----------------+
+1 row in set (0.00 sec)
+
+--------------
+/* Query 3 */
+
+SELECT
+    MAX(hire_date)
+FROM employees
+--------------
+
++----------------+
+| MAX(hire_date) |
++----------------+
+| 2015-12-16     |
++----------------+
+1 row in set (0.00 sec)
+
+--------------
+/* Query 4 */
+SELECT
+    CONCAT(first_name, ' ', last_name) AS employee_name,
+    salary AS Salary
+FROM employees
+where last_name LIKE '%ar%'
+--------------
+
++----------------------+----------+
+| employee_name        | Salary   |
++----------------------+----------+
+| Neena Kochhar        | 17000.00 |
+| Peter Vargas         |  2500.00 |
+| Michael Hartstein    | 13000.00 |
+| Sophia Barbosa Souza |  9500.00 |
+| Matthias Reinhard    |  8100.00 |
++----------------------+----------+
+5 rows in set (0.00 sec)
+
+--------------
+/* Query 5 */
+
+SELECT
+    MIN(last_name) AS first_last_name,
+    MAX(last_name) AS last_last_name
+FROM employees
+--------------
+
++-----------------+----------------+
+| first_last_name | last_last_name |
++-----------------+----------------+
+| Abel            | Zlotkey        |
++-----------------+----------------+
+1 row in set (0.00 sec)
+
+--------------
+/* Query 6 */
+
+SELECT
+    employee_id,
+    CONCAT("$",TRUNCATE(salary/4,2)) AS weekly_salary
+FROM employees
+WHERE salary/4 BETWEEN 700 AND 3000
+--------------
+
++-------------+---------------+
+| employee_id | weekly_salary |
++-------------+---------------+
+|         103 | $2250.00      |
+|         104 | $1500.00      |
+|         107 | $1050.00      |
+|         124 | $1450.00      |
+|         141 | $875.00       |
+|         142 | $775.00       |
+|         149 | $2625.00      |
+|         174 | $2750.00      |
+|         176 | $2150.00      |
+|         178 | $1750.00      |
+|         200 | $1100.00      |
+|         202 | $975.00       |
+|         205 | $3000.00      |
+|         206 | $2075.00      |
+|         207 | $2375.00      |
+|         208 | $1875.00      |
+|         209 | $1825.00      |
+|         210 | $1825.00      |
+|         212 | $2400.00      |
+|         215 | $2150.00      |
+|         216 | $875.00       |
+|         217 | $1000.00      |
+|         219 | $925.00       |
+|         222 | $2000.00      |
+|         223 | $1950.00      |
+|         224 | $2025.00      |
+|         225 | $1075.00      |
+|         226 | $1025.00      |
+|         227 | $1100.00      |
+|         228 | $1250.00      |
+|         231 | $1350.00      |
+|         232 | $1300.00      |
+|         235 | $1225.00      |
++-------------+---------------+
+33 rows in set (0.00 sec)
+
+--------------
+/* Query 7 */
+
+SELECT
+    item_number,
+    UPPER(description) AS item_description
+FROM item
+--------------
+
++-------------+-----------------------------+
+| item_number | item_description            |
++-------------+-----------------------------+
+| im01101044  | CATCHER MITT                |
+| im01101045  | TOP WORN UNDER THE GAME TOP |
+| im01101046  | TEAM SHIRT                  |
+| im01101047  | TEAM SHIRT WITH EMBLEM      |
+| im01101048  | HIGH QUAITY BASBALL BAT     |
+| im01101049  | SWEATER FLEECE VEST         |
+| im01101050  | CLOUDSWIFT                  |
+| im01101052  | SOCKS                       |
++-------------+-----------------------------+
+8 rows in set (0.00 sec)
+
+--------------
+/* Query 8 */
+
+SELECT
+    customer_number,
+    first_name,
+    last_name,
+    ROUND(current_balance,0) AS balance
+FROM customer
+--------------
+
++-----------------+------------+------------+---------+
+| customer_number | first_name | last_name  | balance |
++-----------------+------------+------------+---------+
+| c00001          | Robert     | Thornberry |     150 |
+| c00012          | Jennifer   | Jones      |     100 |
+| c00101          | John       | Doe        |     988 |
+| c00103          | Andrew     | Murcia     |      85 |
+| c00129          | Sam        | Smith      |     741 |
+| c00157          | Sandra     | Pincher    |     841 |
+| c00182          | Billy      | Rufton     |     541 |
+| c00987          | Joey       | Smith      |     288 |
+| c01986          | Maria      | Galant     |     126 |
++-----------------+------------+------------+---------+
+9 rows in set (0.00 sec)
+
+--------------
+/* Query 9 */
+
+SELECT
+    o.order_id,
+    o.cust_number,
+    first_name,
+    last_name,
+    order_date,
+    DATE_ADD(order_date, INTERVAL 20 DAY) AS promotion_date /* for some reason MySQL and SQL have different functions */
+FROM orders o
+JOIN customer c
+ON (o.cust_number = c.customer_number)
+--------------
+
++-----------+-------------+------------+------------+------------+----------------+
+| order_id  | cust_number | first_name | last_name  | order_date | promotion_date |
++-----------+-------------+------------+------------+------------+----------------+
+| or0101250 | c00001      | Robert     | Thornberry | 2017-04-17 | 2017-05-07     |
+| or0101350 | c00001      | Robert     | Thornberry | 2017-05-24 | 2017-06-13     |
+| or0101425 | c00103      | Andrew     | Murcia     | 2017-05-27 | 2017-06-16     |
+| or0101681 | c00001      | Robert     | Thornberry | 2017-06-06 | 2017-06-26     |
+| or0101750 | c01986      | Maria      | Galant     | 2017-07-18 | 2017-08-07     |
+| or0101752 | c01986      | Maria      | Galant     | 2017-12-18 | 2018-01-07     |
+| or0101753 | c00987      | Joey       | Smith      | 2018-12-18 | 2019-01-07     |
+| or0101754 | c00182      | Billy      | Rufton     | 2018-09-17 | 2018-10-07     |
+| or0101755 | c00157      | Sandra     | Pincher    | 2018-10-10 | 2018-10-30     |
+| or0101756 | c00129      | Sam        | Smith      | 2018-10-09 | 2018-10-29     |
++-----------+-------------+------------+------------+------------+----------------+
+10 rows in set (0.00 sec)
+
+--------------
+/* Query 10 */
+
+SELECT
+    COUNT(*) AS num_orders,
+    SUM(number_of_units) AS number_of_units
+FROM orders
+--------------
+
++------------+-----------------+
+| num_orders | number_of_units |
++------------+-----------------+
+|         10 |              56 |
++------------+-----------------+
+1 row in set (0.00 sec)
+
+--------------
+/* Query 11 */
+
+SELECT
+    item_number,
+    COUNT(*) AS numorders
+FROM ordered_items
+GROUP BY item_number
+ORDER BY numorders DESC
+--------------
+
++-------------+-----------+
+| item_number | numorders |
++-------------+-----------+
+| im01101050  |         5 |
+| im01101048  |         3 |
+| im01101044  |         2 |
+| im01101047  |         2 |
+| im01101046  |         1 |
++-------------+-----------+
+5 rows in set (0.00 sec)
+
+--------------
+/* Query 12 */
+
+SELECT
+    email,
+    COUNT(DISTINCT item_number) AS number_of_items
+FROM customer c
+JOIN orders o
+JOIN ordered_items oi
+WHERE o.cust_number = c.customer_number AND oi.order_id = o.order_id /*why does ON not work here?*/
+GROUP BY cust_number
+HAVING COUNT(DISTINCT item_number) >1
+--------------
+
++-----------------------------+-----------------+
+| email                       | number_of_items |
++-----------------------------+-----------------+
+| bob.thornberry@heatmail.com |               3 |
+| ssmith5@example.com         |               2 |
+| spinch2@example.com         |               2 |
+| margal87@delphiview.com     |               2 |
++-----------------------------+-----------------+
+4 rows in set (0.00 sec)
+
+--------------
+/* Query 13 */
+SELECT 
+    category,
+    COUNT(item_number),
+    AVG(price) AS Average_price_of_the_products
+FROM item
+GROUP BY category
+HAVING COUNT(DISTINCT item_number) > 1
+--------------
+
++----------+--------------------+-------------------------------+
+| category | COUNT(item_number) | Average_price_of_the_products |
++----------+--------------------+-------------------------------+
+| clothing |                  5 |                     29.192000 |
++----------+--------------------+-------------------------------+
+1 row in set (0.00 sec)
+
+mysql> notee

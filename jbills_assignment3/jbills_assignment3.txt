@@ -1,0 +1,277 @@
+mysql> SOURCE D:\my_scripts\jbills_assignment3.sql
+--------------
+/*  Assignment3.sql 
+    Jamal Bills
+    CS 31A, Summer 2021 */
+ 
+USE retailStore
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/* Query 1 */
+
+SELECT id AS inventory_id, cost, units AS num_of_units_in_stock FROM inv_list WHERE cost >=3.00 AND cost <=15.00
+--------------
+
++--------------+------+-----------------------+
+| inventory_id | cost | num_of_units_in_stock |
++--------------+------+-----------------------+
+| il0125       | 7.99 |                   250 |
+| il0126       | 5.24 |                    87 |
++--------------+------+-----------------------+
+2 rows in set (0.00 sec)
+
+--------------
+/* Query 2 */
+
+SELECT id AS inventory_id, cost, units AS num_of_units_in_stock FROM inv_list WHERE units % 50 = 0
+--------------
+
++--------------+------+-----------------------+
+| inventory_id | cost | num_of_units_in_stock |
++--------------+------+-----------------------+
+| il0124       | 2.50 |                   100 |
+| il0125       | 7.99 |                   250 |
++--------------+------+-----------------------+
+2 rows in set (0.00 sec)
+
+--------------
+/* Query 3 */
+
+SELECT item_number AS item_id, name AS item_name FROM item WHERE name LIKE "%o%"
+--------------
+
++------------+-----------+
+| item_id    | item_name |
++------------+-----------+
+| im01101044 | gloves    |
+| im01101047 | game top  |
+| im01101050 | Shoes     |
+| im01101052 | Socks     |
++------------+-----------+
+4 rows in set (0.00 sec)
+
+--------------
+/* Query 4 */
+
+SELECT cust_number AS customer_number, address_line_1 AS street_address, zip_code AS postal_code FROM cust_address WHERE city = 'Ralston' AND address_line_2 = "WY"
+--------------
+
++-----------------+----------------+-------------+
+| customer_number | street_address | postal_code |
++-----------------+----------------+-------------+
+| c00129          | 14 Rock Ln     | 82441       |
++-----------------+----------------+-------------+
+1 row in set (0.01 sec)
+
+--------------
+/* Query 5 */
+
+SELECT customer_number, first_name, last_name FROM customer WHERE last_name LIKE "%s"
+--------------
+
++-----------------+------------+-----------+
+| customer_number | first_name | last_name |
++-----------------+------------+-----------+
+| c00012          | Jennifer   | Jones     |
++-----------------+------------+-----------+
+1 row in set (0.00 sec)
+
+--------------
+/* Query 6 */
+
+SELECT item_number, description FROM item WHERE category = "Footwear" AND description LIKE "%team%" OR category = "clothing" AND description LIKE "%team%"
+--------------
+
++-------------+------------------------+
+| item_number | description            |
++-------------+------------------------+
+| im01101046  | team shirt             |
+| im01101047  | team shirt with emblem |
++-------------+------------------------+
+2 rows in set (0.00 sec)
+
+--------------
+/* Query 7 */
+
+SELECT first_name, last_name, salary FROM employees WHERE salary <> 3400 AND 3000 AND 6000 AND first_name LIKE "S%"
+--------------
+
++------------+---------------+----------+
+| first_name | last_name     | salary   |
++------------+---------------+----------+
+| Steven     | King          | 24000.00 |
+| Shelley    | Higgins       | 12000.00 |
+| Sophia     | Barbosa Souza |  9500.00 |
+| Sarah      | Alves Rocha   |  7300.00 |
++------------+---------------+----------+
+4 rows in set (0.00 sec)
+
+--------------
+/* Query 8 */
+
+SELECT item_number, name, description FROM item WHERE name LIKE "_l%" AND name LIKE "___v%" ORDER BY item_number DESC;
+--------------
+
++-------------+--------+--------------+
+| item_number | name   | description  |
++-------------+--------+--------------+
+| im01101044  | gloves | catcher mitt |
++-------------+--------+--------------+
+1 row in set (0.00 sec)
+
+--------------
+/* Query 9 */
+
+DELETE FROM cust_address WHERE address_line_1 = '83 Barrhill Drive'
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/* Query 10 */
+
+DESCRIBE customer
+--------------
+
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| customer_number | varchar(6)   | NO   | PRI | NULL    |       |
+| email           | varchar(50)  | NO   | UNI | NULL    |       |
+| first_name      | varchar(20)  | NO   |     | NULL    |       |
+| last_name       | varchar(30)  | NO   |     | NULL    |       |
+| phone_number    | varchar(11)  | NO   |     | NULL    |       |
+| current_balance | decimal(6,2) | NO   |     | NULL    |       |
+| member_id       | varchar(4)   | YES  | MUL | NULL    |       |
+| card_number     | varchar(6)   | YES  | UNI | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+--------------
+ALTER TABLE customer ADD COLUMN mobile_phone VARCHAR(11)
+--------------
+
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+DESCRIBE customer
+--------------
+
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| customer_number | varchar(6)   | NO   | PRI | NULL    |       |
+| email           | varchar(50)  | NO   | UNI | NULL    |       |
+| first_name      | varchar(20)  | NO   |     | NULL    |       |
+| last_name       | varchar(30)  | NO   |     | NULL    |       |
+| phone_number    | varchar(11)  | NO   |     | NULL    |       |
+| current_balance | decimal(6,2) | NO   |     | NULL    |       |
+| member_id       | varchar(4)   | YES  | MUL | NULL    |       |
+| card_number     | varchar(6)   | YES  | UNI | NULL    |       |
+| mobile_phone    | varchar(11)  | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+--------------
+/* Query 11 */
+
+DESCRIBE customer
+--------------
+
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| customer_number | varchar(6)   | NO   | PRI | NULL    |       |
+| email           | varchar(50)  | NO   | UNI | NULL    |       |
+| first_name      | varchar(20)  | NO   |     | NULL    |       |
+| last_name       | varchar(30)  | NO   |     | NULL    |       |
+| phone_number    | varchar(11)  | NO   |     | NULL    |       |
+| current_balance | decimal(6,2) | NO   |     | NULL    |       |
+| member_id       | varchar(4)   | YES  | MUL | NULL    |       |
+| card_number     | varchar(6)   | YES  | UNI | NULL    |       |
+| mobile_phone    | varchar(11)  | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+--------------
+ALTER TABLE customer DROP COLUMN mobile_phone
+--------------
+
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+DESCRIBE customer
+--------------
+
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| customer_number | varchar(6)   | NO   | PRI | NULL    |       |
+| email           | varchar(50)  | NO   | UNI | NULL    |       |
+| first_name      | varchar(20)  | NO   |     | NULL    |       |
+| last_name       | varchar(30)  | NO   |     | NULL    |       |
+| phone_number    | varchar(11)  | NO   |     | NULL    |       |
+| current_balance | decimal(6,2) | NO   |     | NULL    |       |
+| member_id       | varchar(4)   | YES  | MUL | NULL    |       |
+| card_number     | varchar(6)   | YES  | UNI | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> SHOW TABLES;
+--------------
+SHOW TABLES
+--------------
+
++-----------------------+
+| Tables_in_retailstore |
++-----------------------+
+| cust_address          |
+| customer              |
+| departments           |
+| employees             |
+| inv_list              |
+| item                  |
+| jobs                  |
+| membership            |
+| o_departments         |
+| o_employees           |
+| o_job_description     |
+| ordered_items         |
+| orders                |
++-----------------------+
+13 rows in set (0.00 sec)
+
+
+mysql> SELECT * FROM o_job_description;
+--------------
+SELECT * FROM o_job_description
+--------------
+
++------------+---------------------------------+------------+------------+
+| job_id     | job_title                       | min_salary | max_salary |
++------------+---------------------------------+------------+------------+
+| AC_ACCOUNT | Public Accountant               |       4200 |       9000 |
+| AC_MGR     | Accounting Manager              |       8200 |      16000 |
+| AD_ASST    | Administration Assistant        |       3000 |       6000 |
+| AD_PRES    | President                       |      20000 |      40000 |
+| AD_VP      | Administration Vice President   |      15000 |      30000 |
+| IT_PROG    | Programmer                      |       4000 |      10000 |
+| MK_MAN     | Marketing Manager               |       9000 |      15000 |
+| MK_REP     | Marketing Representative        |       4000 |       9000 |
+| SA_MAN     | Sales Manager                   |      10000 |      20000 |
+| SA_REP     | Sales Representative            |       6000 |      12000 |
+| SR_MK_REP  | Senior Marketing Representative |       6500 |      12000 |
+| SR_SA_REP  | Senior Sales Representative     |       8000 |      16000 |
+| SR_ST_CLRK | Senior Stock Clerk              |       3700 |       6700 |
+| ST_CLERK   | Stock Clerk                     |       2000 |       5000 |
+| ST_MAN     | Stock Manager                   |       5500 |       8500 |
+| hr_man     | human resources manager         |       4500 |       5500 |
++------------+---------------------------------+------------+------------+
+16 rows in set (0.01 sec)
+
+mysql> notee

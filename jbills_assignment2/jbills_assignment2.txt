@@ -1,0 +1,737 @@
+
+mysql> SOURCE D:/my_scripts/Sportsstore database scripts/create_tables_retailStore_database.sql;
+ERROR 1008 (HY000): Can't drop database 'retailstore'; database doesn't exist
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.04 sec)
+
+mysql> SOURCE D:/my_scripts/Sportsstore database scripts/insert_data_retailStore_database.sql;
+Database changed
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE sportsstore
+ERROR 1049 (42000): Unknown database 'sportsstore'
+mysql> ls
+    -> ^C
+mysql> SHOW DATABASES
+    -> ^C
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| company            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| retailstore        |
+| sys                |
+| university         |
++--------------------+
+7 rows in set (0.02 sec)
+
+mysql> SHOW SCHEMA;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SCHEMA' at line 1
+mysql> SHOW SCHEMAS;
++--------------------+
+| Database           |
++--------------------+
+| company            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| retailstore        |
+| sys                |
+| university         |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> USE retailstore;
+Database changed
+mysql> SHOW TABLES;
++-----------------------+
+| Tables_in_retailstore |
++-----------------------+
+| cust_address          |
+| customer              |
+| departments           |
+| employees             |
+| inv_list              |
+| item                  |
+| jobs                  |
+| membership            |
+| ordered_items         |
+| orders                |
++-----------------------+
+10 rows in set (0.01 sec)
+
+mysql> SOURCE d:/my_scripts/jbills_assignment2.sql
+mysql> DESCRIBE item
+    -> ^C
+mysql> 
+mysql> 
+mysql> 
+mysql> DESCRIBE item;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| item_number | varchar(10)  | NO   | PRI | NULL    |       |
+| name        | varchar(20)  | NO   |     | NULL    |       |
+| description | varchar(50)  | NO   |     | NULL    |       |
+| category    | varchar(25)  | NO   |     | NULL    |       |
+| color       | varchar(15)  | YES  |     | NULL    |       |
+| Size        | char(2)      | YES  |     | NULL    |       |
+| price       | decimal(9,2) | NO   |     | NULL    |       |
+| ilt_id      | varchar(11)  | NO   | MUL | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+8 rows in set (0.07 sec)
+
+mysql> SELECT * FROM item
+    -> ^C
+mysql> SELECT * FROM item;
++-------------+-------------+-----------------------------+-------------+--------+------+-------+--------+
+| item_number | name        | description                 | category    | color  | Size | price | ilt_id |
++-------------+-------------+-----------------------------+-------------+--------+------+-------+--------+
+| im01101044  | gloves      | catcher mitt                | clothing    | brown  | m    |  4.99 | il0124 |
+| im01101045  | under shirt | top worn under the game top | clothing    | white  | s    | 10.99 | il0125 |
+| im01101046  | shirt       | team shirt                  | clothing    | orange | l    | 10.99 | il0126 |
+| im01101047  | game top    | team shirt with emblem      | clothing    | orange | m    | 19.99 | il0127 |
+| im01101048  | premium bat | high quaity basball bat     | equipment   | NULL   | NULL | 64.99 | il0128 |
+| im01101049  | Vest        | Sweater Fleece Vest         | clothing    | blue   | xl   | 99.00 | il0129 |
+| im01101050  | Shoes       | Cloudswift                  | Footwear    | NULL   | NULL | 70.00 | il0130 |
+| im01101052  | Socks       | Socks                       | Accessories | brown  | s    | 30.00 | il0131 |
++-------------+-------------+-----------------------------+-------------+--------+------+-------+--------+
+8 rows in set (0.02 sec)
+
+mysql>  SELECT item_number, description, color FROM item;]
++-------------+-----------------------------+--------+
+| item_number | description                 | color  |
++-------------+-----------------------------+--------+
+| im01101044  | catcher mitt                | brown  |
+| im01101045  | top worn under the game top | white  |
+| im01101046  | team shirt                  | orange |
+| im01101047  | team shirt with emblem      | orange |
+| im01101048  | high quaity basball bat     | NULL   |
+| im01101049  | Sweater Fleece Vest         | blue   |
+| im01101050  | Cloudswift                  | NULL   |
+| im01101052  | Socks                       | brown  |
++-------------+-----------------------------+--------+
+8 rows in set (0.00 sec)
+
+    -> ^C
+mysql> DESCRIBE orders
+    -> ^C
+mysql> DESCRIBE orders;
++-----------------+------------+------+-----+---------+-------+
+| Field           | Type       | Null | Key | Default | Extra |
++-----------------+------------+------+-----+---------+-------+
+| order_id        | varchar(9) | NO   | PRI | NULL    |       |
+| order_date      | date       | NO   |     | NULL    |       |
+| number_of_units | int        | NO   |     | NULL    |       |
+| cust_number     | varchar(6) | NO   | MUL | NULL    |       |
++-----------------+------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> DESCRIBE ordered_items
+    -> ^C
+mysql> DESCRIBE ordered_items;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| quantity_ordered | int         | NO   |     | NULL    |       |
+| quantity_shipped | int         | NO   |     | NULL    |       |
+| item_number      | varchar(10) | NO   | PRI | NULL    |       |
+| order_id         | varchar(9)  | NO   | PRI | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> DESCRIBE customers
+    -> ^C
+mysql> DESCRIBE customers;
+ERROR 1146 (42S02): Table 'retailstore.customers' doesn't exist
+mysql> DESCRIBE customer;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| customer_number | varchar(6)   | NO   | PRI | NULL    |       |
+| email           | varchar(50)  | NO   | UNI | NULL    |       |
+| first_name      | varchar(20)  | NO   |     | NULL    |       |
+| last_name       | varchar(30)  | NO   |     | NULL    |       |
+| phone_number    | varchar(11)  | NO   |     | NULL    |       |
+| current_balance | decimal(6,2) | NO   |     | NULL    |       |
+| member_id       | varchar(4)   | YES  | MUL | NULL    |       |
+| card_number     | varchar(6)   | YES  | UNI | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM orders
+    -> ^C
+mysql> SELECT * FROM orders;
++-----------+------------+-----------------+-------------+
+| order_id  | order_date | number_of_units | cust_number |
++-----------+------------+-----------------+-------------+
+| or0101250 | 2017-04-17 |              10 | c00001      |
+| or0101350 | 2017-05-24 |               5 | c00001      |
+| or0101425 | 2017-05-27 |              18 | c00103      |
+| or0101681 | 2017-06-06 |              10 | c00001      |
+| or0101750 | 2017-07-18 |               1 | c01986      |
+| or0101752 | 2017-12-18 |               2 | c01986      |
+| or0101753 | 2018-12-18 |               1 | c00987      |
+| or0101754 | 2018-09-17 |               2 | c00182      |
+| or0101755 | 2018-10-10 |               4 | c00157      |
+| or0101756 | 2018-10-09 |               3 | c00129      |
++-----------+------------+-----------------+-------------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT first_name, last_name FROM customer WHERE current_balance>100;
++------------+------------+
+| first_name | last_name  |
++------------+------------+
+| Robert     | Thornberry |
+| John       | Doe        |
+| Sam        | Smith      |
+| Sandra     | Pincher    |
+| Billy      | Rufton     |
+| Joey       | Smith      |
+| Maria      | Galant     |
++------------+------------+
+7 rows in set (0.01 sec)
+
+mysql> SELECT first_name, last_name,customer_balance FROM customer WHERE current_balance>100;
+ERROR 1054 (42S22): Unknown column 'customer_balance' in 'field list'
+mysql> SELECT first_name, last_name,current_balance FROM customer WHERE current_balance>100;
++------------+------------+-----------------+
+| first_name | last_name  | current_balance |
++------------+------------+-----------------+
+| Robert     | Thornberry |          150.00 |
+| John       | Doe        |          987.50 |
+| Sam        | Smith      |          740.65 |
+| Sandra     | Pincher    |          840.65 |
+| Billy      | Rufton     |          540.65 |
+| Joey       | Smith      |          287.65 |
+| Maria      | Galant     |          125.65 |
++------------+------------+-----------------+
+7 rows in set (0.00 sec)
+
+mysql> DESCRIBE cust_address
+    -> ^C
+mysql> DESCRIBE cust_address;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| id             | varchar(8)  | NO   | PRI | NULL    |       |
+| address_line_1 | varchar(30) | NO   |     | NULL    |       |
+| address_line_2 | varchar(30) | YES  |     | NULL    |       |
+| city           | varchar(15) | NO   |     | NULL    |       |
+| zip_code       | varchar(7)  | NO   |     | NULL    |       |
+| cust_number    | varchar(6)  | NO   | MUL | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM ordered_items
+    -> ^C
+mysql> SELECT * FROM ordered_items;
++------------------+------------------+-------------+-----------+
+| quantity_ordered | quantity_shipped | item_number | order_id  |
++------------------+------------------+-------------+-----------+
+|                5 |                5 | im01101044  | or0101250 |
+|                5 |                5 | im01101044  | or0101350 |
+|                5 |                5 | im01101046  | or0101250 |
+|               18 |               18 | im01101047  | or0101425 |
+|               10 |               10 | im01101047  | or0101681 |
+|                1 |                1 | im01101048  | or0101750 |
+|                2 |                2 | im01101048  | or0101755 |
+|                1 |                1 | im01101048  | or0101756 |
+|                2 |                2 | im01101050  | or0101752 |
+|                1 |                1 | im01101050  | or0101753 |
+|                2 |                2 | im01101050  | or0101754 |
+|                2 |                2 | im01101050  | or0101755 |
+|                2 |                2 | im01101050  | or0101756 |
++------------------+------------------+-------------+-----------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT * FROM orders;
++-----------+------------+-----------------+-------------+
+| order_id  | order_date | number_of_units | cust_number |
++-----------+------------+-----------------+-------------+
+| or0101250 | 2017-04-17 |              10 | c00001      |
+| or0101350 | 2017-05-24 |               5 | c00001      |
+| or0101425 | 2017-05-27 |              18 | c00103      |
+| or0101681 | 2017-06-06 |              10 | c00001      |
+| or0101750 | 2017-07-18 |               1 | c01986      |
+| or0101752 | 2017-12-18 |               2 | c01986      |
+| or0101753 | 2018-12-18 |               1 | c00987      |
+| or0101754 | 2018-09-17 |               2 | c00182      |
+| or0101755 | 2018-10-10 |               4 | c00157      |
+| or0101756 | 2018-10-09 |               3 | c00129      |
++-----------+------------+-----------------+-------------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT order_id FROM orders WHERE cust_number = 'c00103' and order_date = '2017-05-27'
+    -> ^C
+mysql> SELECT order_id FROM orders WHERE cust_number = 'c00103' and order_date = '2017-05-27';
++-----------+
+| order_id  |
++-----------+
+| or0101425 |
++-----------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM orders WHERE cust_number = 'c00103' and order_date = '2017-05-27';
++-----------+------------+-----------------+-------------+
+| order_id  | order_date | number_of_units | cust_number |
++-----------+------------+-----------------+-------------+
+| or0101425 | 2017-05-27 |              18 | c00103      |
++-----------+------------+-----------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> DESCRIBE customer
+    -> ^C
+mysql> DESCRIBE customer;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| customer_number | varchar(6)   | NO   | PRI | NULL    |       |
+| email           | varchar(50)  | NO   | UNI | NULL    |       |
+| first_name      | varchar(20)  | NO   |     | NULL    |       |
+| last_name       | varchar(30)  | NO   |     | NULL    |       |
+| phone_number    | varchar(11)  | NO   |     | NULL    |       |
+| current_balance | decimal(6,2) | NO   |     | NULL    |       |
+| member_id       | varchar(4)   | YES  | MUL | NULL    |       |
+| card_number     | varchar(6)   | YES  | UNI | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+mysql> SELECT customer_number, first_name, last_name, email, phone_number FROM customer;
++-----------------+------------+------------+-----------------------------+--------------+
+| customer_number | first_name | last_name  | email                       | phone_number |
++-----------------+------------+------------+-----------------------------+--------------+
+| c00001          | Robert     | Thornberry | bob.thornberry@heatmail.com | 01234567898  |
+| c00012          | Jennifer   | Jones      | Jjones@freemail.com         | 01505214598  |
+| c00101          | John       | Doe        | unknown@here.com            | 03216547808  |
+| c00103          | Andrew     | Murcia     | MurciaA@globaltech.com      | 07715246890  |
+| c00129          | Sam        | Smith      | ssmith5@example.com         | 01342145231  |
+| c00157          | Sandra     | Pincher    | spinch2@example.com         | 01342136231  |
+| c00182          | Billy      | Rufton     | billyruff@example.com       | 01489736231  |
+| c00987          | Joey       | Smith      | jsmith17@example.com        | 01489736589  |
+| c01986          | Maria      | Galant     | margal87@delphiview.com     | 01442736589  |
++-----------------+------------+------------+-----------------------------+--------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT customer_number, first_name, last_name, current_balance FROM customer WHERE current_balance = current_balance-gift_card_value;
+ERROR 1054 (42S22): Unknown column 'gift_card_value' in 'where clause'
+mysql> SELECT customer_number, first_name, last_name, current_balance, current_balance - 5 as balance_minus_gift  FROM customer;
++-----------------+------------+------------+-----------------+--------------------+
+| customer_number | first_name | last_name  | current_balance | balance_minus_gift |
++-----------------+------------+------------+-----------------+--------------------+
+| c00001          | Robert     | Thornberry |          150.00 |             145.00 |
+| c00012          | Jennifer   | Jones      |          100.00 |              95.00 |
+| c00101          | John       | Doe        |          987.50 |             982.50 |
+| c00103          | Andrew     | Murcia     |           85.00 |              80.00 |
+| c00129          | Sam        | Smith      |          740.65 |             735.65 |
+| c00157          | Sandra     | Pincher    |          840.65 |             835.65 |
+| c00182          | Billy      | Rufton     |          540.65 |             535.65 |
+| c00987          | Joey       | Smith      |          287.65 |             282.65 |
+| c01986          | Maria      | Galant     |          125.65 |             120.65 |
++-----------------+------------+------------+-----------------+--------------------+
+9 rows in set (0.01 sec)
+
+mysql> SELECT first_name,last_name, current_balance, current_balance /12 AS monthly_payments FROM customers;
+ERROR 1146 (42S02): Table 'retailstore.customers' doesn't exist
+mysql> SELECT first_name,last_name, current_balance, current_balance /12 AS monthly_payments FROM customer;
++------------+------------+-----------------+------------------+
+| first_name | last_name  | current_balance | monthly_payments |
++------------+------------+-----------------+------------------+
+| Robert     | Thornberry |          150.00 |        12.500000 |
+| Jennifer   | Jones      |          100.00 |         8.333333 |
+| John       | Doe        |          987.50 |        82.291667 |
+| Andrew     | Murcia     |           85.00 |         7.083333 |
+| Sam        | Smith      |          740.65 |        61.720833 |
+| Sandra     | Pincher    |          840.65 |        70.054167 |
+| Billy      | Rufton     |          540.65 |        45.054167 |
+| Joey       | Smith      |          287.65 |        23.970833 |
+| Maria      | Galant     |          125.65 |        10.470833 |
++------------+------------+-----------------+------------------+
+9 rows in set (0.00 sec)
+
+mysql> DESCRIBE orders
+    -> ^C
+mysql> DESCRIBE orders;
++-----------------+------------+------+-----+---------+-------+
+| Field           | Type       | Null | Key | Default | Extra |
++-----------------+------------+------+-----+---------+-------+
+| order_id        | varchar(9) | NO   | PRI | NULL    |       |
+| order_date      | date       | NO   |     | NULL    |       |
+| number_of_units | int        | NO   |     | NULL    |       |
+| cust_number     | varchar(6) | NO   | MUL | NULL    |       |
++-----------------+------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> SELECT order_id, order_date FROM orders ORDER BY order_date;
++-----------+------------+
+| order_id  | order_date |
++-----------+------------+
+| or0101250 | 2017-04-17 |
+| or0101350 | 2017-05-24 |
+| or0101425 | 2017-05-27 |
+| or0101681 | 2017-06-06 |
+| or0101750 | 2017-07-18 |
+| or0101752 | 2017-12-18 |
+| or0101754 | 2018-09-17 |
+| or0101756 | 2018-10-09 |
+| or0101755 | 2018-10-10 |
+| or0101753 | 2018-12-18 |
++-----------+------------+
+10 rows in set (0.05 sec)
+
+mysql> SELECT order_id, order_date FROM orders WHERE order_date <= '2017-05-27';
++-----------+------------+
+| order_id  | order_date |
++-----------+------------+
+| or0101250 | 2017-04-17 |
+| or0101350 | 2017-05-24 |
+| or0101425 | 2017-05-27 |
++-----------+------------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT * FROM item ORDER BY category, item_number;
++-------------+-------------+-----------------------------+-------------+--------+------+-------+--------+
+| item_number | name        | description                 | category    | color  | Size | price | ilt_id |
++-------------+-------------+-----------------------------+-------------+--------+------+-------+--------+
+| im01101052  | Socks       | Socks                       | Accessories | brown  | s    | 30.00 | il0131 |
+| im01101044  | gloves      | catcher mitt                | clothing    | brown  | m    |  4.99 | il0124 |
+| im01101045  | under shirt | top worn under the game top | clothing    | white  | s    | 10.99 | il0125 |
+| im01101046  | shirt       | team shirt                  | clothing    | orange | l    | 10.99 | il0126 |
+| im01101047  | game top    | team shirt with emblem      | clothing    | orange | m    | 19.99 | il0127 |
+| im01101049  | Vest        | Sweater Fleece Vest         | clothing    | blue   | xl   | 99.00 | il0129 |
+| im01101048  | premium bat | high quaity basball bat     | equipment   | NULL   | NULL | 64.99 | il0128 |
+| im01101050  | Shoes       | Cloudswift                  | Footwear    | NULL   | NULL | 70.00 | il0130 |
++-------------+-------------+-----------------------------+-------------+--------+------+-------+--------+
+8 rows in set (0.01 sec)
+
+mysql> SELECT DISTINCT customer_number FROM orders;
+ERROR 1054 (42S22): Unknown column 'customer_number' in 'field list'
+mysql> DESCRIBE orders
+    -> ^C
+mysql> DESCRIBE orders;
++-----------------+------------+------+-----+---------+-------+
+| Field           | Type       | Null | Key | Default | Extra |
++-----------------+------------+------+-----+---------+-------+
+| order_id        | varchar(9) | NO   | PRI | NULL    |       |
+| order_date      | date       | NO   |     | NULL    |       |
+| number_of_units | int        | NO   |     | NULL    |       |
+| cust_number     | varchar(6) | NO   | MUL | NULL    |       |
++-----------------+------------+------+-----+---------+-------+
+4 rows in set (0.05 sec)
+
+mysql> SELECT DISTINCT cust_number FROM orders;
++-------------+
+| cust_number |
++-------------+
+| c00001      |
+| c00103      |
+| c00129      |
+| c00157      |
+| c00182      |
+| c00987      |
+| c01986      |
++-------------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT last_name,first_name, customer_number FROM customer WHERE cust_number = 'c00103'
+    -> ^C
+mysql> SELECT last_name,first_name, customer_number FROM customer WHERE cust_number = 'c00103';
+ERROR 1054 (42S22): Unknown column 'cust_number' in 'where clause'
+mysql> SELECT last_name,first_name, customer_number FROM customer WHERE customer_number = 'c00103';
++-----------+------------+-----------------+
+| last_name | first_name | customer_number |
++-----------+------------+-----------------+
+| Murcia    | Andrew     | c00103          |
++-----------+------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> Terminal close -- exit!

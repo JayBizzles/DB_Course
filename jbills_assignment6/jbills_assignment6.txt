@@ -1,0 +1,260 @@
+mysql> source c:\my_scripts\jbills_assignment6.sql
+ERROR: 
+Failed to open file 'c:\my_scripts\jbills_assignment6.sql', error: 2
+mysql> source c:\my_scripts\jbills_assignment6.sql
+ERROR: 
+Failed to open file 'c:\my_scripts\jbills_assignment6.sql', error: 2
+mysql> source d:\my_scripts\jbills_assignment6.sql
+--------------
+/*  Assignment6.sql 
+    Jamal Bills
+    CS 31A, Summer 2021 */
+
+USE retailStore
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/* Query 1*/
+SELECT 
+    item_number,
+    description,
+    price 
+FROM item
+WHERE price IN (SELECT min(price) FROM item)
+--------------
+
++-------------+--------------+-------+
+| item_number | description  | price |
++-------------+--------------+-------+
+| im01101044  | catcher mitt |  4.99 |
++-------------+--------------+-------+
+1 row in set (0.01 sec)
+
+--------------
+/* Query 2*/
+SELECT
+    customer_number,
+    first_name,
+    last_name
+FROM customer
+WHERE customer_number IN (SELECT cust_number FROM orders WHERE order_date = '2018-09-17')
+--------------
+
++-----------------+------------+-----------+
+| customer_number | first_name | last_name |
++-----------------+------------+-----------+
+| c00182          | Billy      | Rufton    |
++-----------------+------------+-----------+
+1 row in set (0.01 sec)
+
+--------------
+/* Query 3*/
+SELECT
+    item_number,
+    description,
+    price,
+    category
+FROM item
+WHERE price > ANY(SELECT price FROM item WHERE category = "Accessories")
+--------------
+
++-------------+-------------------------+-------+-----------+
+| item_number | description             | price | category  |
++-------------+-------------------------+-------+-----------+
+| im01101048  | high quaity basball bat | 64.99 | equipment |
+| im01101049  | Sweater Fleece Vest     | 99.00 | clothing  |
+| im01101050  | Cloudswift              | 70.00 | Footwear  |
++-------------+-------------------------+-------+-----------+
+3 rows in set (0.00 sec)
+
+--------------
+/* Query 4*/
+SELECT
+    first_name,
+    last_name,
+    salary,
+    manager_id
+FROM employees
+WHERE salary > ANY
+    (SELECT salary
+    FROM employees
+    WHERE last_name = "Lorentz")
+    AND department_id = 
+        (SELECT department_id
+        FROM employees
+        WHERE last_name = "Abel")
+--------------
+
++------------+-----------+----------+------------+
+| first_name | last_name | salary   | manager_id |
++------------+-----------+----------+------------+
+| Eleni      | Zlotkey   | 10500.00 |        100 |
+| Ellen      | Abel      | 11000.00 |        149 |
+| Jonathon   | Taylor    |  8600.00 |        149 |
+| Nick       | Hooper    |  9600.00 |        149 |
++------------+-----------+----------+------------+
+4 rows in set (0.00 sec)
+
+--------------
+/* Query 5*/
+SELECT
+    department_id,
+    AVG(salary) AS average_salary
+FROM employees
+GROUP BY department_id
+HAVING AVG(salary) < (SELECT salary FROM employees WHERE last_name = "Ernst")
+--------------
+
++---------------+----------------+
+| department_id | average_salary |
++---------------+----------------+
+|            10 |    4300.000000 |
+|            50 |    3371.428571 |
++---------------+----------------+
+2 rows in set (0.00 sec)
+
+--------------
+/* Query 6*/
+SELECT
+    department_id,
+    MIN(salary) AS minimum_salary
+FROM employees
+GROUP BY department_id
+HAVING MIN(salary) > (SELECT MIN(salary) FROM employees WHERE department_id <> 50)
+--------------
+
++---------------+----------------+
+| department_id | minimum_salary |
++---------------+----------------+
+|          NULL |        7000.00 |
+|            10 |        4100.00 |
+|            60 |        4200.00 |
+|            80 |        8600.00 |
+|            85 |        7300.00 |
+|            90 |       17000.00 |
+|           110 |        5200.00 |
++---------------+----------------+
+7 rows in set (0.00 sec)
+
+--------------
+/* Query 7*/
+
+SELECT
+    last_name,
+    first_name,
+    department_id,
+    manager_id
+FROM employees
+WHERE department_id IN (SELECT department_id FROM employees WHERE employee_id = 141)
+AND manager_id IN (SELECT manager_id FROM employees WHERE employee_id = 141)
+AND NOT employee_id IN (SELECT employee_id FROM employees WHERE employee_id = 141)
+--------------
+
++-----------+------------+---------------+------------+
+| last_name | first_name | department_id | manager_id |
++-----------+------------+---------------+------------+
+| Davies    | Curtis     |            50 |        124 |
+| Matos     | Randall    |            50 |        124 |
+| Vargas    | Peter      |            50 |        124 |
+| Bell      | George     |            50 |        124 |
+| Heiden    | Tiffany    |            50 |        124 |
++-----------+------------+---------------+------------+
+5 rows in set (0.00 sec)
+
+--------------
+/* Query 8*/
+SELECT
+    last_name,
+    first_name,
+    department_id,
+    manager_id
+FROM employees
+WHERE department_id = (SELECT department_id FROM employees WHERE employee_id = 141)
+AND manager_id = (SELECT manager_id FROM employees WHERE employee_id = 141)
+--------------
+
++-----------+------------+---------------+------------+
+| last_name | first_name | department_id | manager_id |
++-----------+------------+---------------+------------+
+| Rajs      | Trenna     |            50 |        124 |
+| Davies    | Curtis     |            50 |        124 |
+| Matos     | Randall    |            50 |        124 |
+| Vargas    | Peter      |            50 |        124 |
+| Bell      | George     |            50 |        124 |
+| Heiden    | Tiffany    |            50 |        124 |
++-----------+------------+---------------+------------+
+6 rows in set (0.00 sec)
+
+--------------
+/* Query 9*/
+CREATE VIEW ITEM_ORDER AS
+SELECT 
+    i.item_number,
+    i.description,
+    i.price,
+    o.order_id AS order_number,
+    o.order_date,
+    oi.quantity_ordered AS number_ordered,
+    i.price*oi.quantity_ordered AS quoted_price
+FROM item i
+JOIN ordered_items oi ON i.item_number = oi.item_number
+JOIN orders o ON o.order_id = oi.order_id
+--------------
+
+ERROR 1050 (42S01): Table 'ITEM_ORDER' already exists
+--------------
+/* Query 10*/
+SELECT
+    item_number,
+    description,
+    price,
+    quoted_price
+FROM ITEM_ORDER
+WHERE quoted_price > 100
+--------------
+
++-------------+-------------------------+-------+--------------+
+| item_number | description             | price | quoted_price |
++-------------+-------------------------+-------+--------------+
+| im01101047  | team shirt with emblem  | 19.99 |       359.82 |
+| im01101047  | team shirt with emblem  | 19.99 |       199.90 |
+| im01101048  | high quaity basball bat | 64.99 |       129.98 |
+| im01101050  | Cloudswift              | 70.00 |       140.00 |
+| im01101050  | Cloudswift              | 70.00 |       140.00 |
+| im01101050  | Cloudswift              | 70.00 |       140.00 |
+| im01101050  | Cloudswift              | 70.00 |       140.00 |
++-------------+-------------------------+-------+--------------+
+7 rows in set (0.00 sec)
+
+--------------
+/* Query 11*/
+CREATE VIEW dept_managers AS
+SELECT
+    d.department_name,
+    LEFT(e.first_name ,1) AS FIRST_INITIAL,
+    e.last_name AS SURNAME
+FROM employees e
+JOIN jobs j ON e.job_id = j.job_id
+JOIN departments d ON e.department_id = d.department_id
+WHERE e.job_id LIKE ('%MGR%')
+OR e.job_id LIKE ('%MAN%')
+--------------
+
+ERROR 1050 (42S01): Table 'dept_managers' already exists
+--------------
+SELECT * FROM dept_managers
+--------------
+
++-----------------+---------------+-----------+
+| department_name | FIRST_INITIAL | SURNAME   |
++-----------------+---------------+-----------+
+| Shipping        | K             | Mourgos   |
+| Sales - Europe  | E             | Zlotkey   |
+| Marketing       | M             | Hartstein |
+| Accounting      | S             | Higgins   |
++-----------------+---------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> Terminal close -- exit!

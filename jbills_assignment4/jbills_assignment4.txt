@@ -1,0 +1,397 @@
+/*Jamal Bills*/
+/*Assignment 4*/
+
+
+--------------
+/* Query 1 */
+SELECT order_id, order_date ,customer_number, first_name, last_name
+FROM orders o, customer c
+WHERE (o.cust_number = c.customer_number)
+--------------
+
++-----------+------------+-----------------+------------+------------+
+| order_id  | order_date | customer_number | first_name | last_name  |
++-----------+------------+-----------------+------------+------------+
+| or0101250 | 2017-04-17 | c00001          | Robert     | Thornberry |
+| or0101350 | 2017-05-24 | c00001          | Robert     | Thornberry |
+| or0101425 | 2017-05-27 | c00103          | Andrew     | Murcia     |
+| or0101681 | 2017-06-06 | c00001          | Robert     | Thornberry |
+| or0101750 | 2017-07-18 | c01986          | Maria      | Galant     |
+| or0101752 | 2017-12-18 | c01986          | Maria      | Galant     |
+| or0101753 | 2018-12-18 | c00987          | Joey       | Smith      |
+| or0101754 | 2018-09-17 | c00182          | Billy      | Rufton     |
+| or0101755 | 2018-10-10 | c00157          | Sandra     | Pincher    |
+| or0101756 | 2018-10-09 | c00129          | Sam        | Smith      |
++-----------+------------+-----------------+------------+------------+
+10 rows in set (0.00 sec)
+
+--------------
+/* Query 2 */
+SELECT order_id , customer_number , first_name , last_name 
+FROM  orders, customer 
+WHERE order_date = "2018-9-17"
+
+
+/* Query 3 */
+SELECT o.order_id, order_date, i.item_number, quantity_ordered, price
+FROM orders o, ordered_items, item i
+--------------
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT o.order_id, order_date, i.item_number, quantity_ordered, price
+FROM order' at line 8
+--------------
+/* Query 4 */
+SELECT customer_number, first_name, last_name
+FROM orders o, customer c
+WHERE (o.cust_number = c.customer_number)
+AND (o.order_date <> '2018-9-17')
+--------------
+
++-----------------+------------+------------+
+| customer_number | first_name | last_name  |
++-----------------+------------+------------+
+| c00001          | Robert     | Thornberry |
+| c00001          | Robert     | Thornberry |
+| c00103          | Andrew     | Murcia     |
+| c00001          | Robert     | Thornberry |
+| c01986          | Maria      | Galant     |
+| c01986          | Maria      | Galant     |
+| c00987          | Joey       | Smith      |
+| c00157          | Sandra     | Pincher    |
+| c00129          | Sam        | Smith      |
++-----------------+------------+------------+
+9 rows in set (0.00 sec)
+
+--------------
+/* Query 5 */
+SELECT o.order_id, o.order_date ,i.item_number, description, category
+FROM orders o, customer c, item i
+JOIN ordered_items y
+WHERE (i.item_number = y.item_number)
+AND (o.cust_number = c.customer_number)
+--------------
+
++-----------+------------+-------------+-------------------------+-----------+
+| order_id  | order_date | item_number | description             | category  |
++-----------+------------+-------------+-------------------------+-----------+
+| or0101756 | 2018-10-09 | im01101044  | catcher mitt            | clothing  |
+| or0101755 | 2018-10-10 | im01101044  | catcher mitt            | clothing  |
+| or0101754 | 2018-09-17 | im01101044  | catcher mitt            | clothing  |
+| or0101753 | 2018-12-18 | im01101044  | catcher mitt            | clothing  |
+| or0101752 | 2017-12-18 | im01101044  | catcher mitt            | clothing  |
+| or0101750 | 2017-07-18 | im01101044  | catcher mitt            | clothing  |
+| or0101681 | 2017-06-06 | im01101044  | catcher mitt            | clothing  |
+| or0101425 | 2017-05-27 | im01101044  | catcher mitt            | clothing  |
+| or0101350 | 2017-05-24 | im01101044  | catcher mitt            | clothing  |
+| or0101250 | 2017-04-17 | im01101044  | catcher mitt            | clothing  |
+| or0101756 | 2018-10-09 | im01101046  | team shirt              | clothing  |
+| or0101755 | 2018-10-10 | im01101046  | team shirt              | clothing  |
+| or0101754 | 2018-09-17 | im01101046  | team shirt              | clothing  |
+| or0101753 | 2018-12-18 | im01101046  | team shirt              | clothing  |
+| or0101752 | 2017-12-18 | im01101046  | team shirt              | clothing  |
+| or0101750 | 2017-07-18 | im01101046  | team shirt              | clothing  |
+| or0101681 | 2017-06-06 | im01101046  | team shirt              | clothing  |
+| or0101425 | 2017-05-27 | im01101046  | team shirt              | clothing  |
+| or0101350 | 2017-05-24 | im01101046  | team shirt              | clothing  |
+| or0101250 | 2017-04-17 | im01101046  | team shirt              | clothing  |
+| or0101756 | 2018-10-09 | im01101044  | catcher mitt            | clothing  |
+| or0101755 | 2018-10-10 | im01101044  | catcher mitt            | clothing  |
+| or0101754 | 2018-09-17 | im01101044  | catcher mitt            | clothing  |
+| or0101753 | 2018-12-18 | im01101044  | catcher mitt            | clothing  |
+| or0101752 | 2017-12-18 | im01101044  | catcher mitt            | clothing  |
+| or0101750 | 2017-07-18 | im01101044  | catcher mitt            | clothing  |
+| or0101681 | 2017-06-06 | im01101044  | catcher mitt            | clothing  |
+| or0101425 | 2017-05-27 | im01101044  | catcher mitt            | clothing  |
+| or0101350 | 2017-05-24 | im01101044  | catcher mitt            | clothing  |
+| or0101250 | 2017-04-17 | im01101044  | catcher mitt            | clothing  |
+| or0101756 | 2018-10-09 | im01101047  | team shirt with emblem  | clothing  |
+| or0101755 | 2018-10-10 | im01101047  | team shirt with emblem  | clothing  |
+| or0101754 | 2018-09-17 | im01101047  | team shirt with emblem  | clothing  |
+| or0101753 | 2018-12-18 | im01101047  | team shirt with emblem  | clothing  |
+| or0101752 | 2017-12-18 | im01101047  | team shirt with emblem  | clothing  |
+| or0101750 | 2017-07-18 | im01101047  | team shirt with emblem  | clothing  |
+| or0101681 | 2017-06-06 | im01101047  | team shirt with emblem  | clothing  |
+| or0101425 | 2017-05-27 | im01101047  | team shirt with emblem  | clothing  |
+| or0101350 | 2017-05-24 | im01101047  | team shirt with emblem  | clothing  |
+| or0101250 | 2017-04-17 | im01101047  | team shirt with emblem  | clothing  |
+| or0101756 | 2018-10-09 | im01101047  | team shirt with emblem  | clothing  |
+| or0101755 | 2018-10-10 | im01101047  | team shirt with emblem  | clothing  |
+| or0101754 | 2018-09-17 | im01101047  | team shirt with emblem  | clothing  |
+| or0101753 | 2018-12-18 | im01101047  | team shirt with emblem  | clothing  |
+| or0101752 | 2017-12-18 | im01101047  | team shirt with emblem  | clothing  |
+| or0101750 | 2017-07-18 | im01101047  | team shirt with emblem  | clothing  |
+| or0101681 | 2017-06-06 | im01101047  | team shirt with emblem  | clothing  |
+| or0101425 | 2017-05-27 | im01101047  | team shirt with emblem  | clothing  |
+| or0101350 | 2017-05-24 | im01101047  | team shirt with emblem  | clothing  |
+| or0101250 | 2017-04-17 | im01101047  | team shirt with emblem  | clothing  |
+| or0101756 | 2018-10-09 | im01101048  | high quaity basball bat | equipment |
+| or0101755 | 2018-10-10 | im01101048  | high quaity basball bat | equipment |
+| or0101754 | 2018-09-17 | im01101048  | high quaity basball bat | equipment |
+| or0101753 | 2018-12-18 | im01101048  | high quaity basball bat | equipment |
+| or0101752 | 2017-12-18 | im01101048  | high quaity basball bat | equipment |
+| or0101750 | 2017-07-18 | im01101048  | high quaity basball bat | equipment |
+| or0101681 | 2017-06-06 | im01101048  | high quaity basball bat | equipment |
+| or0101425 | 2017-05-27 | im01101048  | high quaity basball bat | equipment |
+| or0101350 | 2017-05-24 | im01101048  | high quaity basball bat | equipment |
+| or0101250 | 2017-04-17 | im01101048  | high quaity basball bat | equipment |
+| or0101756 | 2018-10-09 | im01101050  | Cloudswift              | Footwear  |
+| or0101755 | 2018-10-10 | im01101050  | Cloudswift              | Footwear  |
+| or0101754 | 2018-09-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101753 | 2018-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101752 | 2017-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101750 | 2017-07-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101681 | 2017-06-06 | im01101050  | Cloudswift              | Footwear  |
+| or0101425 | 2017-05-27 | im01101050  | Cloudswift              | Footwear  |
+| or0101350 | 2017-05-24 | im01101050  | Cloudswift              | Footwear  |
+| or0101250 | 2017-04-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101756 | 2018-10-09 | im01101050  | Cloudswift              | Footwear  |
+| or0101755 | 2018-10-10 | im01101050  | Cloudswift              | Footwear  |
+| or0101754 | 2018-09-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101753 | 2018-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101752 | 2017-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101750 | 2017-07-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101681 | 2017-06-06 | im01101050  | Cloudswift              | Footwear  |
+| or0101425 | 2017-05-27 | im01101050  | Cloudswift              | Footwear  |
+| or0101350 | 2017-05-24 | im01101050  | Cloudswift              | Footwear  |
+| or0101250 | 2017-04-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101756 | 2018-10-09 | im01101050  | Cloudswift              | Footwear  |
+| or0101755 | 2018-10-10 | im01101050  | Cloudswift              | Footwear  |
+| or0101754 | 2018-09-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101753 | 2018-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101752 | 2017-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101750 | 2017-07-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101681 | 2017-06-06 | im01101050  | Cloudswift              | Footwear  |
+| or0101425 | 2017-05-27 | im01101050  | Cloudswift              | Footwear  |
+| or0101350 | 2017-05-24 | im01101050  | Cloudswift              | Footwear  |
+| or0101250 | 2017-04-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101756 | 2018-10-09 | im01101048  | high quaity basball bat | equipment |
+| or0101755 | 2018-10-10 | im01101048  | high quaity basball bat | equipment |
+| or0101754 | 2018-09-17 | im01101048  | high quaity basball bat | equipment |
+| or0101753 | 2018-12-18 | im01101048  | high quaity basball bat | equipment |
+| or0101752 | 2017-12-18 | im01101048  | high quaity basball bat | equipment |
+| or0101750 | 2017-07-18 | im01101048  | high quaity basball bat | equipment |
+| or0101681 | 2017-06-06 | im01101048  | high quaity basball bat | equipment |
+| or0101425 | 2017-05-27 | im01101048  | high quaity basball bat | equipment |
+| or0101350 | 2017-05-24 | im01101048  | high quaity basball bat | equipment |
+| or0101250 | 2017-04-17 | im01101048  | high quaity basball bat | equipment |
+| or0101756 | 2018-10-09 | im01101050  | Cloudswift              | Footwear  |
+| or0101755 | 2018-10-10 | im01101050  | Cloudswift              | Footwear  |
+| or0101754 | 2018-09-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101753 | 2018-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101752 | 2017-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101750 | 2017-07-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101681 | 2017-06-06 | im01101050  | Cloudswift              | Footwear  |
+| or0101425 | 2017-05-27 | im01101050  | Cloudswift              | Footwear  |
+| or0101350 | 2017-05-24 | im01101050  | Cloudswift              | Footwear  |
+| or0101250 | 2017-04-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101756 | 2018-10-09 | im01101048  | high quaity basball bat | equipment |
+| or0101755 | 2018-10-10 | im01101048  | high quaity basball bat | equipment |
+| or0101754 | 2018-09-17 | im01101048  | high quaity basball bat | equipment |
+| or0101753 | 2018-12-18 | im01101048  | high quaity basball bat | equipment |
+| or0101752 | 2017-12-18 | im01101048  | high quaity basball bat | equipment |
+| or0101750 | 2017-07-18 | im01101048  | high quaity basball bat | equipment |
+| or0101681 | 2017-06-06 | im01101048  | high quaity basball bat | equipment |
+| or0101425 | 2017-05-27 | im01101048  | high quaity basball bat | equipment |
+| or0101350 | 2017-05-24 | im01101048  | high quaity basball bat | equipment |
+| or0101250 | 2017-04-17 | im01101048  | high quaity basball bat | equipment |
+| or0101756 | 2018-10-09 | im01101050  | Cloudswift              | Footwear  |
+| or0101755 | 2018-10-10 | im01101050  | Cloudswift              | Footwear  |
+| or0101754 | 2018-09-17 | im01101050  | Cloudswift              | Footwear  |
+| or0101753 | 2018-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101752 | 2017-12-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101750 | 2017-07-18 | im01101050  | Cloudswift              | Footwear  |
+| or0101681 | 2017-06-06 | im01101050  | Cloudswift              | Footwear  |
+| or0101425 | 2017-05-27 | im01101050  | Cloudswift              | Footwear  |
+| or0101350 | 2017-05-24 | im01101050  | Cloudswift              | Footwear  |
+| or0101250 | 2017-04-17 | im01101050  | Cloudswift              | Footwear  |
++-----------+------------+-------------+-------------------------+-----------+
+130 rows in set (0.00 sec)
+
+--------------
+ORDER BY category, order_id
+
+/* Query 6 */
+SELECT o.order_id, order_date
+FROM orders o, ordered_items y, item i
+WHERE (o.order_id = y.order_id)
+AND (i.description <> "team shirt with emblem")
+--------------
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY category, order_id
+
+/* Query 6 */
+SELECT o.order_id, order_date
+FROM or' at line 1
+--------------
+/* Query 7 */
+SELECT o.order_id, order_date
+FROM orders o, ordered_items y, item i, customer c
+WHERE (c.first_name = "Robert")
+AND (o.order_id = y.order_id )
+AND (i.description <> "team shirt with emblem")
+--------------
+
++-----------+------------+
+| order_id  | order_date |
++-----------+------------+
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101250 | 2017-04-17 |
+| or0101350 | 2017-05-24 |
+| or0101350 | 2017-05-24 |
+| or0101350 | 2017-05-24 |
+| or0101350 | 2017-05-24 |
+| or0101350 | 2017-05-24 |
+| or0101350 | 2017-05-24 |
+| or0101350 | 2017-05-24 |
+| or0101425 | 2017-05-27 |
+| or0101425 | 2017-05-27 |
+| or0101425 | 2017-05-27 |
+| or0101425 | 2017-05-27 |
+| or0101425 | 2017-05-27 |
+| or0101425 | 2017-05-27 |
+| or0101425 | 2017-05-27 |
+| or0101681 | 2017-06-06 |
+| or0101681 | 2017-06-06 |
+| or0101681 | 2017-06-06 |
+| or0101681 | 2017-06-06 |
+| or0101681 | 2017-06-06 |
+| or0101681 | 2017-06-06 |
+| or0101681 | 2017-06-06 |
+| or0101750 | 2017-07-18 |
+| or0101750 | 2017-07-18 |
+| or0101750 | 2017-07-18 |
+| or0101750 | 2017-07-18 |
+| or0101750 | 2017-07-18 |
+| or0101750 | 2017-07-18 |
+| or0101750 | 2017-07-18 |
+| or0101752 | 2017-12-18 |
+| or0101752 | 2017-12-18 |
+| or0101752 | 2017-12-18 |
+| or0101752 | 2017-12-18 |
+| or0101752 | 2017-12-18 |
+| or0101752 | 2017-12-18 |
+| or0101752 | 2017-12-18 |
+| or0101753 | 2018-12-18 |
+| or0101753 | 2018-12-18 |
+| or0101753 | 2018-12-18 |
+| or0101753 | 2018-12-18 |
+| or0101753 | 2018-12-18 |
+| or0101753 | 2018-12-18 |
+| or0101753 | 2018-12-18 |
+| or0101754 | 2018-09-17 |
+| or0101754 | 2018-09-17 |
+| or0101754 | 2018-09-17 |
+| or0101754 | 2018-09-17 |
+| or0101754 | 2018-09-17 |
+| or0101754 | 2018-09-17 |
+| or0101754 | 2018-09-17 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101755 | 2018-10-10 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
+| or0101756 | 2018-10-09 |
++-----------+------------+
+91 rows in set (0.00 sec)
+
+--------------
+/* Query 8 */
+SELECT  customer_number, first_name, last_name, address_line_1, address_line_2, city
+FROM customer c
+CORSS JOIN cust_address
+--------------
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CORSS JOIN cust_address' at line 4
+--------------
+/* Query 9 */
+SELECT customer_number, first_name,last_name,phone_number, email, name
+FROM customer INNER JOIN membership m
+ON (customer.member_id = m.id)
+--------------
+
++-----------------+------------+------------+--------------+-----------------------------+-------------+
+| customer_number | first_name | last_name  | phone_number | email                       | name        |
++-----------------+------------+------------+--------------+-----------------------------+-------------+
+| c00001          | Robert     | Thornberry | 01234567898  | bob.thornberry@heatmail.com | Rookie      |
+| c00129          | Sam        | Smith      | 01342145231  | ssmith5@example.com         | Rookie      |
+| c00101          | John       | Doe        | 03216547808  | unknown@here.com            | All Star    |
+| c00157          | Sandra     | Pincher    | 01342136231  | spinch2@example.com         | All Star    |
+| c00987          | Joey       | Smith      | 01489736589  | jsmith17@example.com        | All Star    |
+| c00182          | Billy      | Rufton     | 01489736231  | billyruff@example.com       | Golden Star |
+| c01986          | Maria      | Galant     | 01442736589  | margal87@delphiview.com     | Golden Star |
++-----------------+------------+------------+--------------+-----------------------------+-------------+
+7 rows in set (0.00 sec)
+
+--------------
+/* Query 10 */
+SELECT *
+FROM customer
+CROSS JOIN membership
+--------------
+
++-----------------+-----------------------------+------------+------------+--------------+-----------------+-----------+-------------+------+-------------+----------+
+| customer_number | email                       | first_name | last_name  | phone_number | current_balance | member_id | card_number | id   | name        | discount |
++-----------------+-----------------------------+------------+------------+--------------+-----------------+-----------+-------------+------+-------------+----------+
+| c00001          | bob.thornberry@heatmail.com | Robert     | Thornberry | 01234567898  |          150.00 | t001      | NULL        | t003 | Golden Star |       30 |
+| c00001          | bob.thornberry@heatmail.com | Robert     | Thornberry | 01234567898  |          150.00 | t001      | NULL        | t002 | All Star    |       20 |
+| c00001          | bob.thornberry@heatmail.com | Robert     | Thornberry | 01234567898  |          150.00 | t001      | NULL        | t001 | Rookie      |       10 |
+| c00012          | Jjones@freemail.com         | Jennifer   | Jones      | 01505214598  |          100.00 | NULL      | lc1015      | t003 | Golden Star |       30 |
+| c00012          | Jjones@freemail.com         | Jennifer   | Jones      | 01505214598  |          100.00 | NULL      | lc1015      | t002 | All Star    |       20 |
+| c00012          | Jjones@freemail.com         | Jennifer   | Jones      | 01505214598  |          100.00 | NULL      | lc1015      | t001 | Rookie      |       10 |
+| c00101          | unknown@here.com            | John       | Doe        | 03216547808  |          987.50 | t002      | NULL        | t003 | Golden Star |       30 |
+| c00101          | unknown@here.com            | John       | Doe        | 03216547808  |          987.50 | t002      | NULL        | t002 | All Star    |       20 |
+| c00101          | unknown@here.com            | John       | Doe        | 03216547808  |          987.50 | t002      | NULL        | t001 | Rookie      |       10 |
+| c00103          | MurciaA@globaltech.com      | Andrew     | Murcia     | 07715246890  |           85.00 | NULL      | lc2341      | t003 | Golden Star |       30 |
+| c00103          | MurciaA@globaltech.com      | Andrew     | Murcia     | 07715246890  |           85.00 | NULL      | lc2341      | t002 | All Star    |       20 |
+| c00103          | MurciaA@globaltech.com      | Andrew     | Murcia     | 07715246890  |           85.00 | NULL      | lc2341      | t001 | Rookie      |       10 |
+| c00129          | ssmith5@example.com         | Sam        | Smith      | 01342145231  |          740.65 | t001      | NULL        | t003 | Golden Star |       30 |
+| c00129          | ssmith5@example.com         | Sam        | Smith      | 01342145231  |          740.65 | t001      | NULL        | t002 | All Star    |       20 |
+| c00129          | ssmith5@example.com         | Sam        | Smith      | 01342145231  |          740.65 | t001      | NULL        | t001 | Rookie      |       10 |
+| c00157          | spinch2@example.com         | Sandra     | Pincher    | 01342136231  |          840.65 | t002      | NULL        | t003 | Golden Star |       30 |
+| c00157          | spinch2@example.com         | Sandra     | Pincher    | 01342136231  |          840.65 | t002      | NULL        | t002 | All Star    |       20 |
+| c00157          | spinch2@example.com         | Sandra     | Pincher    | 01342136231  |          840.65 | t002      | NULL        | t001 | Rookie      |       10 |
+| c00182          | billyruff@example.com       | Billy      | Rufton     | 01489736231  |          540.65 | t003      | NULL        | t003 | Golden Star |       30 |
+| c00182          | billyruff@example.com       | Billy      | Rufton     | 01489736231  |          540.65 | t003      | NULL        | t002 | All Star    |       20 |
+| c00182          | billyruff@example.com       | Billy      | Rufton     | 01489736231  |          540.65 | t003      | NULL        | t001 | Rookie      |       10 |
+| c00987          | jsmith17@example.com        | Joey       | Smith      | 01489736589  |          287.65 | t002      | NULL        | t003 | Golden Star |       30 |
+| c00987          | jsmith17@example.com        | Joey       | Smith      | 01489736589  |          287.65 | t002      | NULL        | t002 | All Star    |       20 |
+| c00987          | jsmith17@example.com        | Joey       | Smith      | 01489736589  |          287.65 | t002      | NULL        | t001 | Rookie      |       10 |
+| c01986          | margal87@delphiview.com     | Maria      | Galant     | 01442736589  |          125.65 | t003      | NULL        | t003 | Golden Star |       30 |
+| c01986          | margal87@delphiview.com     | Maria      | Galant     | 01442736589  |          125.65 | t003      | NULL        | t002 | All Star    |       20 |
+| c01986          | margal87@delphiview.com     | Maria      | Galant     | 01442736589  |          125.65 | t003      | NULL        | t001 | Rookie      |       10 |
++-----------------+-----------------------------+------------+------------+--------------+-----------------+-----------+-------------+------+-------------+----------+
+27 rows in set (0.00 sec)
